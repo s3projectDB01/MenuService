@@ -1,8 +1,10 @@
-﻿using MenuApp.MenuService.EntityFramework.Data;
+﻿using System;
+using MenuApp.MenuService.EntityFramework.Data;
 using MenuApp.MenuService.EntityFramework.Repository;
 using MenuApp.MenuService.Logic.Interfaces.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 namespace MenuApp.MenuService.EntityFramework
 {
@@ -12,12 +14,17 @@ namespace MenuApp.MenuService.EntityFramework
         {
             services.AddDbContext<AppDbContext>(x =>
             {
-                x.UseNpgsql(connectionString);
+                x.UseMySql(
+                        connectionString,
+                        new MariaDbServerVersion(new Version(10, 5, 9)),
+                        mysqlOptions => mysqlOptions.CharSetBehavior(CharSetBehavior.NeverAppend))
+                    .EnableSensitiveDataLogging()
+                    .EnableDetailedErrors();
             });
-         
-            services.AddTransient<IMenuRepository, MenuRepository >();
-            services.AddTransient<IIngredientRepository, IngredientRepository >();
-                     
+
+            services.AddTransient<IMenuRepository, MenuRepository>();
+            services.AddTransient<IIngredientRepository, IngredientRepository>();
+            
             return services;
         }
     }

@@ -24,7 +24,7 @@ namespace MenuApp.MenuService.Controllers
                 Id = Guid.NewGuid(),
                 Name = "Tomatensoep",
                 Type = "Voor",
-                Ingredients = new List<Guid> {Guid.NewGuid(),Guid.NewGuid()},
+                Ingredients = new List<Ingredient> {new Ingredient(), new Ingredient()},
                 Price = 12.15
             };
             MenuItem item2 = new MenuItem
@@ -32,7 +32,7 @@ namespace MenuApp.MenuService.Controllers
                 Id = Guid.NewGuid(),
                 Name = "Biefstuk",
                 Type = "Hoofd",
-                Ingredients = new List<Guid> {Guid.NewGuid(),Guid.NewGuid()},
+                Ingredients = new List<Ingredient> {new Ingredient(), new Ingredient()},
                 Price = 67.15
             };
             MenuItem item3 = new MenuItem
@@ -40,7 +40,7 @@ namespace MenuApp.MenuService.Controllers
                 Id = Guid.NewGuid(),
                 Name = "Creme Brulee",
                 Type = "Na",
-                Ingredients = new List<Guid> {Guid.NewGuid(),Guid.NewGuid()},
+                Ingredients = new List<Ingredient> {new Ingredient(), new Ingredient()},
                 Price = 100.15
             };
 

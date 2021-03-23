@@ -6,9 +6,9 @@ namespace MenuApp.MenuService.Logic.Entities
     public class MenuItem
     {
         public Guid Id { get; set; }
-        public String Name { get; set; }
-        public String Type { get; set; }
-        public List<Guid> Ingredients { get; set; }
-        public Double Price { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
+        public double Price { get; set; }
     }
 }
