@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.MenuApp.MenuService.iml
+# Datasource local storage ignored files
+/../../../../../../../../:\ICT\S3-DB01\MenuApp\MenuApp.MenuService\.idea\.idea.MenuApp.MenuService\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
