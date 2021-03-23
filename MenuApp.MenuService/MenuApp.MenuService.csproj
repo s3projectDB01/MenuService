@@ -5,7 +5,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MenuApp.MenuService.EntityFramework\MenuApp.MenuService.EntityFramework.csproj" />
+      <ProjectReference Include="..\MenuApp.MenuService.Logic\MenuApp.MenuService.Logic.csproj" />
     </ItemGroup>
 
 </Project>
