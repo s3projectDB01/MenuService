@@ -22,7 +22,7 @@ namespace MenuApp.MenuService.Controllers
             MenuItem item1 = new MenuItem
             {
                 Id = Guid.NewGuid(),
-                Name = "Tomatensoep",
+                Name = "Tomatensoep (lekkur)",
                 Type = "Voor",
                 Ingredients = new List<Ingredient> {new Ingredient(), new Ingredient()},
                 Price = 12.15
