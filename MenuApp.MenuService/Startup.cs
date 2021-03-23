@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MenuApp.MenuService.EntityFramework;
 using MenuApp.MenuService.EntityFramework.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,8 +35,7 @@ namespace MenuApp.MenuService
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "MenuApp.MenuService", Version = "v1"});
             });
             
-            services.AddDbContext<AppDbContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("AppDbContext")));
+            services.AddPersistence(Configuration.GetValue<string>("connectionString"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
