@@ -13,7 +13,7 @@ namespace MenuApp.MenuService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MenuItemController
+    public class MenuItemsController
     {
         [HttpGet]
         public IEnumerable<MenuItem> Get()
