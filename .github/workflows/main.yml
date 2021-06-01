@@ -21,7 +21,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: s3software/orderservice:latest
+          tags: s3software/menuservice:latest
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
