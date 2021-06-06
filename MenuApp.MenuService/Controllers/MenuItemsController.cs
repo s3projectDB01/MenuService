@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using MenuApp.MenuService.Logic.Entities;
 using MenuApp.MenuService.Logic.Interfaces.Repository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace MenuApp.MenuService.Controllers
 {
@@ -17,7 +12,7 @@ namespace MenuApp.MenuService.Controllers
     {
         private readonly IMenuRepository _menuRepository;
 
-        public MenuItemController(IMenuRepository menuRepository)
+        public MenuItemsController(IMenuRepository menuRepository)
         {
             _menuRepository = menuRepository;
         }
