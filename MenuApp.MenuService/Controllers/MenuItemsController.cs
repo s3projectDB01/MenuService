@@ -24,7 +24,9 @@ namespace MenuApp.MenuService.Controllers
             return await _menuRepository.GetAll();
         }
 
-        public async Task<MenuItem> Get(Guid id)
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<MenuItem> GetById(Guid id)
         {
             return await _menuRepository.GetById(id);
         }
