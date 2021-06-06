@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using MenuApp.MenuService.Logic.Entities;
 using MenuApp.MenuService.Logic.Interfaces.Repository;
@@ -21,6 +22,11 @@ namespace MenuApp.MenuService.Controllers
         public async Task<List<MenuItem>> Get()
         {
             return await _menuRepository.GetAll();
+        }
+
+        public async Task<MenuItem> Get(Guid id)
+        {
+            return await _menuRepository.GetById(id);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using MenuApp.MenuService.EntityFramework.Data;
 using MenuApp.MenuService.Logic.Entities;
@@ -19,6 +20,11 @@ namespace MenuApp.MenuService.EntityFramework.Repository
         public async Task<List<MenuItem>> GetAll()
         {
             return await _db.MenuItems.Include(x => x.Ingredients).ToListAsync();
+        }
+
+        public async Task<MenuItem> GetById(Guid id)
+        {
+            return await _db.MenuItems.Include(x => x.Ingredients).FirstAsync(x => x.Id.Equals(id));
         }
     }
 }
