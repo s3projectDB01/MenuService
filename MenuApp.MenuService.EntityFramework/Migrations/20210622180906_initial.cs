@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MenuApp.MenuService.EntityFramework.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,9 @@ namespace MenuApp.MenuService.EntityFramework.Migrations
                     Id = table.Column<Guid>(type: "char(36)", nullable: false),
                     Name = table.Column<string>(type: "longtext", nullable: true),
                     Type = table.Column<string>(type: "longtext", nullable: true),
-                    Price = table.Column<double>(type: "double", nullable: false)
+                    Price = table.Column<double>(type: "double", nullable: false),
+                    Image = table.Column<string>(type: "longtext", nullable: true),
+                    Description = table.Column<string>(type: "longtext", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -27,6 +29,7 @@ namespace MenuApp.MenuService.EntityFramework.Migrations
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false),
                     Name = table.Column<string>(type: "longtext", nullable: true),
+                    Optional = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     MenuItemId = table.Column<Guid>(type: "char(36)", nullable: true)
                 },
                 constraints: table =>

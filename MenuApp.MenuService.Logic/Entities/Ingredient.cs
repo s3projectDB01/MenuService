@@ -6,5 +6,6 @@ namespace MenuApp.MenuService.Logic.Entities
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+        public bool Optional { get; set; }
     }
 }
